@@ -31,7 +31,6 @@ const Registration = () => {
     const formSubmit = async (e) => {
         e.preventDefault();
     
-        // Check password value before appending to FormData
         if (!data.userpassword) {
             setErrorMessage("Password is required.");
             return;
@@ -42,11 +41,6 @@ const Registration = () => {
         formData.append('useremail', data.useremail);
         formData.append('userpassword', data.userpassword);
         formData.append('userimage', data.userimage);
-    
-        // Log form data for debugging
-        for (const [key, value] of formData.entries()) {
-            console.log(`${key}: ${value}`);
-        }
     
         try {
             const resData = await axios.post('http://localhost:4000/registration', formData, {
@@ -73,8 +67,6 @@ const Registration = () => {
             setErrorMessage(error.response?.data?.message || "Registration failed. Please try again.");
         }
     };
-    
-    
 
     return (
         <div className='main-login'>
@@ -120,13 +112,7 @@ const Registration = () => {
                     </div>
                     <div className="input_box">
                         <label htmlFor="userimage">Upload Image</label>
-                        <input 
-                            type="file" 
-                            id="userimage" 
-                            name='userimage' 
-                            onChange={handleImageChange} 
-                            required 
-                        />
+                        <input type="file" name="userimage" onChange={handleImageChange} required />
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>

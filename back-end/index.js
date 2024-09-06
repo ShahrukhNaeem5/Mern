@@ -17,7 +17,14 @@ const app = express();
 // Middleware setup
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000', // Your frontend URL
+    credentials: true, // Allow credentials (cookies) to be sent
+}));
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+  
 app.use(cookieParser());
 
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -53,10 +60,9 @@ mongoose.connect(process.env.MONGO_URI, {
 // User Registration Route with multer upload middleware
 app.post("/registration", upload.single('userimage'), async (req, res) => {
     try {
-        // Access user data from req.body
         const { username, useremail, userpassword } = req.body;
+        const userimage = req.file;
 
-        // Check for existing user
         const existingUser = await RegistrationModel.findOne({
             $or: [{ username }, { useremail }]
         });
@@ -75,20 +81,25 @@ app.post("/registration", upload.single('userimage'), async (req, res) => {
             username,
             useremail,
             userpassword: hashedPassword,
-            userimage: req.file ? req.file.filename : null // Save the filename for the uploaded image
+            userimage: userimage ? `/uploads/${userimage.filename}` : null
         });
 
-        // Generate JWT
         const token = jwt.sign({ userId: newUser._id }, JWT_SECRET, { expiresIn: '1h' });
 
-        // Set token as a cookie
-        res.cookie('token', token, { httpOnly: true });
+        res.cookie('token', token, { 
+            httpOnly: true, 
+            secure: process.env.NODE_ENV === 'production', 
+            sameSite: 'Strict' 
+        });
 
-        res.status(200).json({ message: "User registered successfully", token });
+        res.status(200).json({ message: "User registered successfully", token, user: newUser });
+
     } catch (error) {
-        res.status(500).json({ message: "Error registering user", error: error.message });
+        console.error("Error during registration:", error); // Log the error
+        res.status(500).json({ message: "Registration failed. Please try again." });
     }
 });
+
 
 
 
@@ -121,20 +132,27 @@ app.post("/login", async (req, res) => {
     }
 });
 
-// Route to check user authentication via JWT
-app.get('/protected', (req, res) => {
+// Route to check user authentication and return user data via JWT
+app.get('/protected', async (req, res) => {
     const token = req.cookies.token;
     if (!token) {
-        return res.status(401).json({ message: "Unauthorized access" });
+      return res.status(401).json({ message: "Unauthorized access" });
     }
-
+  
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
-        res.status(200).json({ message: "Access granted", userId: decoded.userId });
+      const decoded = jwt.verify(token, JWT_SECRET);
+      const user = await RegistrationModel.findById(decoded.userId).select('username useremail userimage');
+  
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+  
+      res.status(200).json(user); // Send back the user data including the image URL
     } catch (error) {
-        return res.status(401).json({ message: "Invalid token" });
+      return res.status(401).json({ message: "Invalid token" });
     }
-});
+  });
+  
 
 
 // Listen on port
