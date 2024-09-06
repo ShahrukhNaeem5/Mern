@@ -2,28 +2,28 @@ const mongoose = require('mongoose');
 
 const RegistrationSchema = new mongoose.Schema({
     username: {
-        type:String,
-        required:[true,"User Name is Required"]
+        type: String,
+        required: [true, "Username is required"],
+        unique: true // Ensuring username is unique
     },
     useremail: {
-        type:String,
-        required:[true,"User Email is Required"]
+        type: String,
+        required: [true, "Email is required"],
+        unique: true // Ensuring email is unique
     },
     userpassword: {
-        type:String,
-        required:[true,"User Password is Required"]
+        type: String,
+        required: [true, "Password is required"]
     },
     userimage: {
-        type:String,
-        required:[true,"Image is Required"]
-    },
-    
-    
-},
-{
-    timestamps:true
+        type: String,
+        required: [true, "Image is required"]
+    }
+}, {
+    timestamps: true
 });
 
-module.exports = mongoose.model('RegistrationModel', RegistrationSchema);
+// Export the model
+const RegistrationModel = mongoose.model('Registration', RegistrationSchema);
 
-
+module.exports = { RegistrationModel };
