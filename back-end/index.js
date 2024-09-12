@@ -9,6 +9,9 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const { RegistrationModel } = require("./Model/RegistrationModel");
+const { FoodModel } = require('./Model/FoodModel'); // Correct import
+
+
 const dotenv = require("dotenv").config();
 
 // Initialize express app
@@ -153,6 +156,19 @@ app.get('/protected', async (req, res) => {
     }
   });
   
+/* FOOD */
+  app.get('/api/foods', async (req, res) => {
+    try {
+        console.log('Fetching food items'); // Log the request
+        const foods = await FoodModel.find(); // Corrected model
+        console.log('Foods retrieved:', foods); // Log retrieved foods
+        res.json(foods);
+    } catch (error) {
+        console.error('Error retrieving food items:', error); // Log the error
+        res.status(500).json({ message: 'Error retrieving food items' });
+    }
+});
+
 
 
 // Listen on port

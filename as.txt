@@ -1,0 +1,235 @@
+<div className="gallery-area section-padding30 ">
+                    <div className="container-fluid ">
+                        <div className="row">
+                            <div className="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                                <div className="box snake mb-30">
+                                    <div className="gallery-img big-img"   style={{ backgroundImage: `url(${galleryimage1})` }}
+                                    ></div>
+                                    <div className="overlay">
+                                        <div className="overlay-content">
+                                            <h3>Muscle gaining </h3>
+                                            <a href="gallery.html"><i className="ti-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                                <div className="box snake mb-30">
+                                    <div className="gallery-img big-img"   style={{ backgroundImage: `url(${galleryimage2})` }}
+                                    ></div>
+                                    <div className="overlay">
+                                        <div className="overlay-content">
+                                            <h3>Muscle gaining </h3>
+                                            <a href="gallery.html"><i className="ti-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                                <div className="box snake mb-30">
+                                    <div className="gallery-img big-img"   style={{ backgroundImage: `url(${galleryimage3})` }}
+                                    ></div>
+                                    <div className="overlay">
+                                        <div className="overlay-content">
+                                            <h3>Muscle gaining </h3>
+                                            <a href="gallery.html"><i className="ti-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                                <div className="box snake mb-30">
+                                    <div className="gallery-img big-img"   style={{ backgroundImage: `url(${galleryimage4})` }}
+                                    ></div>
+                                    <div className="overlay">
+                                        <div className="overlay-content">
+                                            <h3>Muscle gaining </h3>
+                                            <a href="gallery.html"><i className="ti-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                                <div className="box snake mb-30">
+                                    <div className="gallery-img big-img"   style={{ backgroundImage: `url(${galleryimage5})` }}
+                                    ></div>
+                                    <div className="overlay">
+                                        <div className="overlay-content">
+                                            <h3>Muscle gaining </h3>
+                                            <a href="gallery.html"><i className="ti-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <div className="box snake mb-30">
+                                    <div className="gallery-img big-img"   style={{ backgroundImage: `url(${galleryimage6})` }}>
+</div>
+                                    <div className="overlay">
+                                        <div className="overlay-content">
+                                            <h3>Muscle gaining </h3>
+                                            <a href="gallery.html"><i className="ti-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <section className="home-blog-area pt-10 pb-50">
+                    <div className="container">
+
+                        <div className="row justify-content-center">
+                            <div className="col-lg-7 col-md-9 col-sm-10">
+                                <div className="section-tittle text-center mb-100 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                                    <h2>From Blog</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xl-6 col-lg-6 col-md-6">
+                                <div className="home-blog-single mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                                    <div className="blog-img-cap">
+                                        <div className="blog-img">
+                                            <img src={blog1} alt="" />
+                                        </div>
+                                        <div className="blog-cap">
+                                            <span>Gym & Fitness</span>
+                                            <h3><a href="blog_details.html">Your Antibiotic One Day To 10 Day Options</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-6 col-lg-6 col-md-6">
+                                <div className="home-blog-single mb-30 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".6s">
+                                    <div className="blog-img-cap">
+                                        <div className="blog-img">
+                                            <img src={blog2} alt="" />
+                                        </div>
+                                        <div className="blog-cap">
+                                            <span>Gym & Fitness</span>
+                                            <h3><a href="blog_details.html">Your Antibiotic One Day To 10 Day Options</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div
+      className="video-area section-bg2 d-flex align-items-center"
+      data-background={videobg}
+    >                    <div className="container">
+                        <div className="video-wrap position-relative">
+                            <div className="video-icon" >
+                                <a className="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i className="fas fa-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section className="services-area">
+                    <div className="container">
+                        <div className="row justify-content-between">
+                            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                                <div className="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                                    <div className="features-icon">
+                                        <img src="assets/img/icon/icon1.svg" alt="" />
+                                    </div>
+                                    <div className="features-caption">
+                                        <h3>Location</h3>
+                                        <p>You’ll look at graphs and charts in Task One, how to approach </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                                <div className="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                                    <div className="features-icon">
+                                        <img src="assets/img/icon/icon2.svg" alt="" />
+                                    </div>
+                                    <div className="features-caption">
+                                        <h3>Phone</h3>
+                                        <p>(90) 277 278 2566</p>
+                                        <p>  (78) 267 256 2578</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                                <div className="single-services mb-40 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
+                                    <div className="features-icon">
+                                        <img src="assets/img/icon/icon3.svg" alt="" />
+                                    </div>
+                                    <div className="features-caption">
+                                        <h3>Email</h3>
+                                        <p>jacson767@gmail.com</p>
+                                        <p>contact56@zacsion.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+
+                <div className="footer-area black-bg">
+                    <div className="container">
+                        <div className="footer-top footer-padding">
+
+                            <div className="row">
+                                <div className="col-xl-12">
+                                    <div className="single-footer-caption mb-50 text-center">
+
+                                        <div className="footer-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                                            <a href="index-2.html"><img src="assets/img/logo/logo2_footer.png" alt="" /></a>
+                                        </div>
+
+                                        <div className="header-area main-header2 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
+                                            <div className="main-header main-header2">
+                                                <div className="menu-wrapper menu-wrapper2">
+                                                    <div className="main-menu main-menu2 text-center">
+                                                        <nav>
+                                                            <ul>
+                                                                <li><a href="index-2.html">Home</a></li>
+                                                                <li><a href="about.html">About</a></li>
+                                                                <li><a href="courses.html">Courses</a></li>
+                                                                <li><a href="pricing.html">Pricing</a></li>
+                                                                <li><a href="gallery.html">Gallery</a></li>
+                                                                <li><a href="contact.html">Contact</a></li>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="footer-social mt-30 wow fadeInUp" data-wow-duration="3s" data-wow-delay=".8s">
+                                            <a href="#"><i className="fab fa-twitter"></i></a>
+                                            <a href="https://bit.ly/sai4ull"><i className="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i className="fab fa-pinterest-p"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="footer-bottom">
+                            <div className="row d-flex align-items-center">
+                                <div className="col-lg-12">
+                                    <div className="footer-copy-right text-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div id="back-top" >
+                <a title="Go to Top" href="#"> <i className="fas fa-level-up-alt"></i></a>
+            </div>

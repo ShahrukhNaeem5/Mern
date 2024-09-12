@@ -23,7 +23,7 @@ const Login = () => {
       Cookies.set('token', response.data.token, { expires: 1 }); // Set token to expire in 1 day
 
       // Redirect to a different page after successful login
-      navigate('/profile'); // Change this to your desired route
+      navigate('/home'); // Change this to your desired route
     } catch (error) {
       console.error("Error logging in", error);
       setErrorMessage("Invalid email or password");
